@@ -1,0 +1,156 @@
+.helpline-page {
+  min-height: 100vh;
+  padding: 120px 5% 80px;
+}
+
+.helpline-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.helpline-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hl-section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.contacts-section {
+  margin-bottom: 4rem;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.contact-card {
+  background: rgba(10, 10, 30, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-card:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 240, 255, 0.08);
+}
+
+.contact-role {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--electric-purple);
+  margin-bottom: 0.5rem;
+}
+
+.contact-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.contact-phone,
+.contact-email {
+  display: block;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.95rem;
+  color: var(--electric-blue);
+  text-decoration: none;
+  margin-bottom: 0.3rem;
+  transition: opacity 0.2s;
+}
+
+.contact-phone:hover,
+.contact-email:hover {
+  opacity: 0.7;
+}
+
+.faq-section {
+  margin-bottom: 4rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: rgba(10, 10, 30, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.faq-q {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.faq-a {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+}
+
+.location-section {
+  margin-bottom: 2rem;
+}
+
+.venue-card {
+  background: rgba(10, 10, 30, 0.6);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.venue-info h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.venue-info p {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.3rem;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .helpline-page {
+    padding: 100px 4% 100px;
+  }
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+}

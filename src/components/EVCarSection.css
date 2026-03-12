@@ -1,0 +1,240 @@
+.ev-section {
+  background: linear-gradient(180deg, #080820 0%, #050515 50%, #080820 100%);
+  padding-bottom: 80px;
+}
+
+.ev-subtitle {
+  text-align: center;
+  font-family: var(--font-accent);
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-top: -40px;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+/* ===== ROAD ===== */
+.ev-road-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.road {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #1a1a2e;
+  border-top: 3px solid #333;
+  border-bottom: 3px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.road-line {
+  width: 60px;
+  height: 4px;
+  background: #facc15;
+  border-radius: 2px;
+  animation: road-scroll 1.5s linear infinite;
+}
+
+@keyframes road-scroll {
+  0% { transform: translateX(0); opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { transform: translateX(-120px); opacity: 0.8; }
+}
+
+/* ===== EV CAR ===== */
+.ev-car-wrapper {
+  position: absolute;
+  bottom: 30px;
+  left: -400px;
+  width: 300px;
+  z-index: 10;
+  will-change: transform, left;
+}
+
+.ev-car-wrapper.car-animate {
+  animation: car-drive 12s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes car-drive {
+  0% {
+    left: -400px;
+    transform: translateY(0);
+  }
+  10% {
+    left: 5%;
+    transform: translateY(-1px);
+  }
+  30% {
+    left: 25%;
+    transform: translateY(1px);
+  }
+  50% {
+    left: 45%;
+    transform: translateY(-1px);
+  }
+  70% {
+    left: 65%;
+    transform: translateY(1px);
+  }
+  90% {
+    left: 85%;
+    transform: translateY(-1px);
+  }
+  100% {
+    left: 110%;
+    transform: translateY(0);
+  }
+}
+
+.ev-car {
+  width: 100%;
+  filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.4));
+}
+
+.car-glow {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 20px;
+  background: radial-gradient(ellipse, rgba(0, 240, 255, 0.4), transparent);
+  border-radius: 50%;
+  animation: glow-pulse 2.5s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes glow-pulse {
+  0% { opacity: 0.2; transform: translateX(-50%) scaleX(0.85); }
+  100% { opacity: 0.6; transform: translateX(-50%) scaleX(1.15); }
+}
+
+/* ===== CAR SPARKS ===== */
+.car-sparks {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  pointer-events: none;
+}
+
+.spark {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--electric-blue);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--electric-blue), 0 0 12px var(--electric-blue);
+}
+
+.spark.s1 { left: 20%; animation: spark-fly 0.8s ease-out infinite 0s; }
+.spark.s2 { left: 35%; animation: spark-fly 0.6s ease-out infinite 0.2s; }
+.spark.s3 { left: 50%; animation: spark-fly 0.7s ease-out infinite 0.1s; }
+.spark.s4 { left: 65%; animation: spark-fly 0.5s ease-out infinite 0.3s; }
+.spark.s5 { left: 80%; animation: spark-fly 0.9s ease-out infinite 0.15s; }
+
+@keyframes spark-fly {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx, -20px), var(--ty, 20px)) scale(0);
+    opacity: 0;
+  }
+}
+
+.spark.s1 { --tx: -15px; --ty: 15px; }
+.spark.s2 { --tx: -25px; --ty: 20px; }
+.spark.s3 { --tx: 10px; --ty: 18px; }
+.spark.s4 { --tx: -20px; --ty: 25px; }
+.spark.s5 { --tx: 15px; --ty: 12px; }
+
+/* ===== CHARGING STATIONS ===== */
+.charging-station {
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+}
+
+.cs1 { left: 25%; }
+.cs2 { right: 20%; }
+
+.cs-pole {
+  width: 4px;
+  height: 40px;
+  background: linear-gradient(to top, #333, var(--electric-blue));
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+}
+
+.cs-head {
+  font-size: 1.5rem;
+  animation: bolt-pulse 2s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+/* ===== EV FEATURES ===== */
+.ev-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ev-feature {
+  text-align: center;
+  padding: 30px 20px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.6s ease;
+}
+
+.ev-feature:hover {
+  transform: translateY(-6px);
+  border-color: var(--electric-blue);
+  box-shadow: 0 15px 35px rgba(0, 240, 255, 0.08);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.ev-feature h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--electric-blue);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.ev-feature p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .ev-road-container {
+    height: 200px;
+  }
+  .ev-car-wrapper {
+    width: 200px;
+  }
+}

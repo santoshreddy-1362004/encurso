@@ -1,0 +1,134 @@
+.timeline-page {
+  min-height: 100vh;
+  padding: 120px 5% 80px;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--electric-blue), var(--electric-purple), var(--electric-blue));
+  transform: translateX(-50%);
+  opacity: 0.4;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  position: relative;
+  animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.timeline-item.left {
+  justify-content: flex-start;
+  padding-right: calc(50% + 30px);
+  text-align: right;
+}
+
+.timeline-item.right {
+  justify-content: flex-end;
+  padding-left: calc(50% + 30px);
+  text-align: left;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  width: 14px;
+  height: 14px;
+  background: var(--electric-blue);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px var(--electric-blue);
+  z-index: 1;
+}
+
+.timeline-card {
+  background: rgba(10, 10, 30, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.timeline-card:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 240, 255, 0.08);
+}
+
+.tl-time {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  color: var(--electric-blue);
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.tl-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.tl-event {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.tl-desc {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-page {
+    padding: 100px 4% 100px;
+  }
+
+  .timeline-line {
+    left: 20px;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    padding-left: 50px;
+    padding-right: 0;
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .timeline-dot {
+    left: 20px;
+  }
+}
