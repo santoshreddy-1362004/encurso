@@ -98,10 +98,9 @@ export default function Hero() {
       <canvas ref={canvasRef} className="lightning-canvas" />
       <div className="hero-grid-overlay" />
       <div className="hero-content">
-        <div className="hero-badge">
-          <span className="badge-bolt">⚡</span>
-          <span>Department of Electrical & Electronics Engineering</span>
-          <span className="badge-bolt">⚡</span>
+        <div className="hero-university-header">
+          <p className="hero-univ-name">Jawaharlal Nehru Technological University Kakinada</p>
+          <p className="hero-dept-presents">Department of Electrical {'&'} Electronics Engineering Presents</p>
         </div>
         <h1 className="hero-title">
           <span className="title-line-1">
@@ -117,6 +116,8 @@ export default function Hero() {
           <span className="date-divider">|</span>
           <span className="date-days">2 Days of Electrifying Action</span>
         </div>
+        <p className="hero-symposium">A National Level Technical Symposium</p>
+        <p className="hero-venue">📍 JNTUK University College of Engineering — EEE Department, Kakinada</p>
         <p className="hero-tagline">
           <span className="tagline-spark">⚡</span>
           Where <span className="highlight-word">Innovation</span> Meets{' '}

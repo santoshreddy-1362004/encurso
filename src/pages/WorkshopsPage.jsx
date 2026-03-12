@@ -65,7 +65,10 @@ export default function WorkshopsPage() {
                   <span className="ws-topic-tag" key={j}>{t}</span>
                 ))}
               </div>
-              <button className="ws-enroll-btn">Enroll Now ⚡</button>
+              <div className="ws-btn-group">
+                <button className="ws-enroll-btn">Register Now ⚡</button>
+                <button className="ws-explore-btn">Explore →</button>
+              </div>
             </div>
           </div>
         ))}

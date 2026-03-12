@@ -102,13 +102,13 @@
 }
 
 .ws-enroll-btn {
-  width: 100%;
+  flex: 1;
   padding: 0.8rem;
   border: 1px solid var(--electric-purple);
-  background: transparent;
+  background: rgba(168, 85, 247, 0.1);
   color: var(--electric-purple);
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -116,8 +116,33 @@
 }
 
 .ws-enroll-btn:hover {
-  background: rgba(168, 85, 247, 0.15);
+  background: rgba(168, 85, 247, 0.2);
   box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+.ws-btn-group {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: auto;
+}
+
+.ws-explore-btn {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ws-explore-btn:hover {
+  border-color: rgba(0, 240, 255, 0.5);
+  color: var(--electric-blue);
+  background: rgba(0, 240, 255, 0.1);
 }
 
 @media (max-width: 768px) {

@@ -71,7 +71,10 @@ export default function EventsPage() {
                 <div className="ep-detail"><span className="ep-label">Team</span><span className="ep-value">{event.team}</span></div>
                 <div className="ep-detail"><span className="ep-label">Duration</span><span className="ep-value">{event.duration}</span></div>
               </div>
-              <button className="ep-register-btn">Register Now ⚡</button>
+              <div className="ep-btn-group">
+                <button className="ep-register-btn">Register Now ⚡</button>
+                <button className="ep-explore-btn">Explore →</button>
+              </div>
             </div>
           </div>
         ))}
