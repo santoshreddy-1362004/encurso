@@ -133,6 +133,8 @@
 .nav-logo-right .nav-logo-img {
   width: 50px;
   height: 50px;
+  object-fit: cover;
+  padding: 0;
 }
 
 .nav-logo-right:hover .nav-logo-img {
@@ -171,6 +173,8 @@
   .nav-logo-right .nav-logo-img {
     width: 38px;
     height: 38px;
+    object-fit: cover;
+    padding: 0;
   }
 
   .mobile-bottom-nav {

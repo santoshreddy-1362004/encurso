@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -12,6 +13,44 @@ import HelplinePage from './pages/HelplinePage'
 import './App.css'
 
 function AppContent() {
+  useEffect(() => {
+    if (!import.meta.env.PROD) {
+      return undefined
+    }
+
+    const preventDefault = event => {
+      event.preventDefault()
+    }
+
+    const preventCopyShortcuts = event => {
+      if (!(event.ctrlKey || event.metaKey)) {
+        return
+      }
+
+      const blockedKeys = ['a', 'c', 'p', 's', 'u', 'x']
+
+      if (blockedKeys.includes(event.key.toLowerCase())) {
+        event.preventDefault()
+      }
+    }
+
+    document.addEventListener('copy', preventDefault)
+    document.addEventListener('cut', preventDefault)
+    document.addEventListener('contextmenu', preventDefault)
+    document.addEventListener('selectstart', preventDefault)
+    document.addEventListener('dragstart', preventDefault)
+    document.addEventListener('keydown', preventCopyShortcuts)
+
+    return () => {
+      document.removeEventListener('copy', preventDefault)
+      document.removeEventListener('cut', preventDefault)
+      document.removeEventListener('contextmenu', preventDefault)
+      document.removeEventListener('selectstart', preventDefault)
+      document.removeEventListener('dragstart', preventDefault)
+      document.removeEventListener('keydown', preventCopyShortcuts)
+    }
+  }, [])
+
   return (
     <RouteTransitionProvider>
       <div className="app">
