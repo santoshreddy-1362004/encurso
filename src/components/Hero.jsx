@@ -1,9 +1,21 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { useRouteTransition } from './RouteTransitionProvider'
 import './Hero.css'
+
+function isPlainLeftClick(event) {
+  return (
+    event.button === 0 &&
+    !event.metaKey &&
+    !event.altKey &&
+    !event.ctrlKey &&
+    !event.shiftKey
+  )
+}
 
 export default function Hero() {
   const canvasRef = useRef(null)
+  const { startRouteTransition, isTransitioning } = useRouteTransition()
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -93,6 +105,23 @@ export default function Hero() {
     }
   }, [])
 
+  const handleHeroRouteChange = (event, path) => {
+    if (!isPlainLeftClick(event)) {
+      return
+    }
+
+    if (isTransitioning) {
+      event.preventDefault()
+      return
+    }
+
+    const started = startRouteTransition(path)
+
+    if (started) {
+      event.preventDefault()
+    }
+  }
+
   return (
     <section id="hero" className="hero">
       <canvas ref={canvasRef} className="lightning-canvas" />
@@ -129,11 +158,11 @@ export default function Hero() {
           The biggest EEE department fest is here — powered by passion, driven by circuits.
         </p>
         <div className="hero-buttons">
-          <Link to="/events" className="btn-primary">
+          <Link to="/events" className="btn-primary" onClick={event => handleHeroRouteChange(event, '/events')}>
             <span className="btn-text">Explore Events</span>
             <span className="btn-spark" />
           </Link>
-          <Link to="/timeline" className="btn-secondary">
+          <Link to="/timeline" className="btn-secondary" onClick={event => handleHeroRouteChange(event, '/timeline')}>
             View Timeline
           </Link>
         </div>
