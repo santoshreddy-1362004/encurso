@@ -1,4 +1,7 @@
+
 import './WorkshopsPage.css'
+import { useState } from 'react'
+import Modal from '../components/Modal'
 
 const workshops = [
   {
@@ -31,6 +34,8 @@ const workshops = [
 ]
 
 export default function WorkshopsPage() {
+  const [modalIndex, setModalIndex] = useState(null)
+  const [expandedIndex, setExpandedIndex] = useState(null)
   return (
     <div className="workshops-page">
       <div className="workshops-header">
@@ -44,7 +49,7 @@ export default function WorkshopsPage() {
 
       <div className="workshops-grid">
         {workshops.map((w, i) => (
-          <div className="ws-card" key={i} style={{ animationDelay: `${i * 0.1}s` }}>
+          <div className={`ws-card${expandedIndex === i ? ' ws-card-expanded' : ''}`} key={i} style={{ animationDelay: `${i * 0.1}s` }}>
             <div className="ws-card-img">
               <img src={w.img} alt={w.title} loading="lazy" />
             </div>
@@ -69,12 +74,40 @@ export default function WorkshopsPage() {
                 >
                   Register Now ⚡
                 </a>
-                <button className="ws-explore-btn">Explore →</button>
+                <button className="ws-explore-btn" onClick={() => setModalIndex(i)}>Explore →</button>
+                <button className="ws-explore-btn" style={{marginLeft:'0.5rem'}} onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}>
+                  {expandedIndex === i ? 'Collapse' : 'Expand'}
+                </button>
               </div>
+              {expandedIndex === i && (
+                <div className="ws-expanded-details" style={{marginTop:'1rem',background:'#0a1a2f',padding:'1rem',borderRadius:'8px'}}>
+                  <strong>Topics Covered:</strong>
+                  <ul>
+                    {w.topics.map((t, j) => <li key={j}>{t}</li>)}
+                  </ul>
+                  <p style={{marginTop:'0.5rem'}}><a href={w.registerUrl} target="_blank" rel="noopener noreferrer" style={{color:'#00f0ff'}}>Register for this workshop</a></p>
+                </div>
+              )}
             </div>
           </div>
         ))}
       </div>
+      <Modal open={modalIndex !== null} onClose={() => setModalIndex(null)}>
+        {modalIndex !== null && (
+          <div>
+            <h2 style={{color:'#00f0ff'}}>{workshops[modalIndex].title}</h2>
+            <img src={workshops[modalIndex].img} alt={workshops[modalIndex].title} style={{width:'100%',borderRadius:'8px',marginBottom:'1rem'}} />
+            <p>{workshops[modalIndex].desc}</p>
+            <strong>Instructor:</strong> {workshops[modalIndex].instructor}<br/>
+            <strong>Duration:</strong> {workshops[modalIndex].duration}<br/>
+            <strong>Topics:</strong>
+            <ul>
+              {workshops[modalIndex].topics.map((t, j) => <li key={j}>{t}</li>)}
+            </ul>
+            <a href={workshops[modalIndex].registerUrl} target="_blank" rel="noopener noreferrer" style={{color:'#00f0ff',fontWeight:'bold'}}>Register Now</a>
+          </div>
+        )}
+      </Modal>
     </div>
   )
 }

@@ -1,4 +1,7 @@
+
 import './EventsPage.css'
+import { useState } from 'react'
+import Modal from '../components/Modal'
 
 const events = [
   {
@@ -84,6 +87,8 @@ const events = [
 ]
 
 export default function EventsPage() {
+  const [modalIndex, setModalIndex] = useState(null)
+  const [expandedIndex, setExpandedIndex] = useState(null)
   return (
     <div className="events-page">
       <div className="events-page-header">
@@ -102,7 +107,7 @@ export default function EventsPage() {
 
       <div className="events-page-grid">
         {events.map((event, i) => (
-          <div className="ep-card spark-border" key={i} style={{ animationDelay: `${i * 0.08}s` }}>
+          <div className={`ep-card spark-border${expandedIndex === i ? ' ep-card-expanded' : ''}`} key={i} style={{ animationDelay: `${i * 0.08}s` }}>
             <div className="ep-card-img">
               <img src={event.img} alt={event.name} loading="lazy" />
               <span className="ep-tag">{event.tag}</span>
@@ -124,12 +129,35 @@ export default function EventsPage() {
                 >
                   Register Now ⚡
                 </a>
-                <button className="ep-explore-btn">Explore →</button>
+                <button className="ep-explore-btn" onClick={() => setModalIndex(i)}>Explore →</button>
+                <button className="ep-explore-btn" style={{marginLeft:'0.5rem'}} onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}>
+                  {expandedIndex === i ? 'Collapse' : 'Expand'}
+                </button>
               </div>
+              {expandedIndex === i && (
+                <div className="ep-expanded-details" style={{marginTop:'1rem',background:'#0a1a2f',padding:'1rem',borderRadius:'8px'}}>
+                  <strong>Team:</strong> {event.team}<br/>
+                  <strong>Duration:</strong> {event.duration}<br/>
+                  <strong>Description:</strong> {event.desc}
+                  <p style={{marginTop:'0.5rem'}}><a href={event.registerUrl} target="_blank" rel="noopener noreferrer" style={{color:'#00f0ff'}}>Register for this event</a></p>
+                </div>
+              )}
             </div>
           </div>
         ))}
       </div>
+      <Modal open={modalIndex !== null} onClose={() => setModalIndex(null)}>
+        {modalIndex !== null && (
+          <div>
+            <h2 style={{color:'#00f0ff'}}>{events[modalIndex].name}</h2>
+            <img src={events[modalIndex].img} alt={events[modalIndex].name} style={{width:'100%',borderRadius:'8px',marginBottom:'1rem'}} />
+            <p>{events[modalIndex].desc}</p>
+            <strong>Team:</strong> {events[modalIndex].team}<br/>
+            <strong>Duration:</strong> {events[modalIndex].duration}<br/>
+            <a href={events[modalIndex].registerUrl} target="_blank" rel="noopener noreferrer" style={{color:'#00f0ff',fontWeight:'bold'}}>Register Now</a>
+          </div>
+        )}
+      </Modal>
     </div>
   )
 }
