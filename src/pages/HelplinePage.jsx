@@ -1,10 +1,7 @@
 import './HelplinePage.css'
 
 const contacts = [
-  { role: 'Event Coordinator', name: 'K. Sai Teja', phone: '+91 98765 43210', email: 'saiteja@encurso.in' },
-  { role: 'Workshop Coordinator', name: 'P. Mounika', phone: '+91 87654 32109', email: 'mounika@encurso.in' },
-  { role: 'Technical Support', name: 'R. Vamsi Krishna', phone: '+91 76543 21098', email: 'vamsi@encurso.in' },
-  { role: 'Registration Help', name: 'S. Divya', phone: '+91 65432 10987', email: 'divya@encurso.in' },
+  { role: 'Helpline', name: 'Sriram', phone: '+91 90000 00000', email: 'sriram@encurso.in' },
 ]
 
 const faqs = [
