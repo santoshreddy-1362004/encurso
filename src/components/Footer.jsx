@@ -18,19 +18,30 @@ export default function Footer() {
             <ul>
               <li><a href="#hero">Home</a></li>
               <li><a href="#about">About</a></li>
-              <li><a href="#events">Events</a></li>
-              <li><a href="#ev-section">EV Showcase</a></li>
+              <li><a href="/workshops">Workshops</a></li>
+              <li><a href="/events">Events</a></li>
               <li><a href="#drones">Drones</a></li>
+            </ul>
+          </div>
+          <div className="footer-links-section">
+            <h4>Workshops</h4>
+            <ul>
+              <li><a href="/workshops">IoT Workshop</a></li>
+              <li><a href="/workshops">Drone Workshop</a></li>
+              <li><a href="/workshops">MATLAB Simulation</a></li>
             </ul>
           </div>
           <div className="footer-links-section">
             <h4>Events</h4>
             <ul>
-              <li><a href="#events">Circuit Clash</a></li>
-              <li><a href="#events">Code Surge</a></li>
-              <li><a href="#events">Robo Volt</a></li>
-              <li><a href="#events">EV Rally</a></li>
-              <li><a href="#events">Drone Strike</a></li>
+              <li><a href="/events">Paper Presentation</a></li>
+              <li><a href="/events">Project Expo</a></li>
+              <li><a href="/events">Circuit Clash</a></li>
+              <li><a href="/events">Poster Presentation</a></li>
+              <li><a href="/events">Watt-a-Quiz</a></li>
+              <li><a href="/events">Photography Contest</a></li>
+              <li><a href="/events">Treasure Hunt</a></li>
+              <li><a href="/events">Reel Contest</a></li>
             </ul>
           </div>
           <div className="footer-contact">

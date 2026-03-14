@@ -2,36 +2,31 @@ import './WorkshopsPage.css'
 
 const workshops = [
   {
-    title: 'Electric Vehicle Technology',
-    img: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&q=80',
-    instructor: 'Prof. S. Lakshmi',
-    duration: '4 hours',
-    desc: 'Deep dive into EV architecture — BLDC motor control, battery management systems, regenerative braking, and EV charging infrastructure.',
-    topics: ['BLDC Motors', 'BMS Design', 'Regenerative Braking', 'EV Charging'],
-  },
-  {
-    title: 'IoT & Smart Systems',
+    title: 'Hands-on IoT Workshop',
     img: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&q=80',
-    instructor: 'Dr. K. Ramesh',
+    instructor: 'Industry Expert',
     duration: '3 hours',
-    desc: 'Build IoT-enabled smart monitoring systems using ESP32, sensors, MQTT protocol, and cloud dashboards.',
-    topics: ['ESP32', 'MQTT Protocol', 'Cloud Dashboard', 'Smart Sensors'],
+    desc: 'Experience the Internet of Things by building and programming smart devices. Learn sensor integration, cloud connectivity, and real-world IoT applications.',
+    topics: ['IoT Devices', 'Sensors', 'Cloud Integration', 'Live Projects'],
+    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfPf5VDr5MLxroGqObpT_mI2P4OwEzhmTbtlldkGYG-EfjJYA/viewform?usp=dialog',
   },
   {
-    title: 'Drone Building & Flight',
+    title: 'Hands-on Drone Workshop',
     img: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&q=80',
-    instructor: 'Eng. V. Anil Kumar',
-    duration: '5 hours',
-    desc: 'Build a quadcopter from scratch — frame assembly, flight controller setup, ESC calibration, PID tuning, and maiden flight.',
-    topics: ['Frame Assembly', 'Flight Controller', 'ESC Calibration', 'PID Tuning'],
+    instructor: 'Drone Specialist',
+    duration: '4 hours',
+    desc: 'Assemble, configure, and fly drones. Gain practical skills in drone technology, flight control, and aerial robotics.',
+    topics: ['Drone Assembly', 'Flight Control', 'Aerial Robotics', 'Hands-on Flying'],
+    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSe2_KH5vj8HybatUiNjvmYMkErABvslzbyTPUIePvzOIqWcRQ/viewform?usp=publish-editor',
   },
   {
-    title: 'Embedded Systems with ARM',
+    title: 'MATLAB Simulation Workshop',
     img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80',
-    instructor: 'Dr. P. Nagaraju',
-    duration: '4 hours',
-    desc: 'Program ARM Cortex-M microcontrollers for real-time control, automation, and embedded system applications.',
-    topics: ['ARM Architecture', 'GPIO & Timers', 'ADC/DAC', 'RTOS Basics'],
+    instructor: 'MATLAB Professional',
+    duration: '3 hours',
+    desc: 'Master simulation and modeling using MATLAB. Explore electrical systems, automation, and data analysis through interactive sessions.',
+    topics: ['MATLAB Basics', 'Simulation', 'Modeling', 'Data Analysis'],
+    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSc5_zImhXP45fD4Sc6Dwotc6vM2qHZwNcttqAJJRa5uhelc_g/viewform?usp=publish-editor',
   },
 ]
 
@@ -66,7 +61,14 @@ export default function WorkshopsPage() {
                 ))}
               </div>
               <div className="ws-btn-group">
-                <button className="ws-enroll-btn">Register Now ⚡</button>
+                <a
+                  className="ws-enroll-btn"
+                  href={w.registerUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Register Now ⚡
+                </a>
                 <button className="ws-explore-btn">Explore →</button>
               </div>
             </div>

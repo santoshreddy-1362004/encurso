@@ -168,18 +168,18 @@ export default function Hero() {
         </div>
         <div className="hero-stats">
           <div className="stat-item">
-            <span className="stat-number electric-text">15+</span>
+            <span className="stat-number electric-text">8</span>
             <span className="stat-label">Events</span>
           </div>
           <div className="stat-divider" />
           <div className="stat-item">
-            <span className="stat-number electric-text">500+</span>
-            <span className="stat-label">Participants</span>
+            <span className="stat-number electric-text">3</span>
+            <span className="stat-label">Workshops</span>
           </div>
           <div className="stat-divider" />
           <div className="stat-item">
-            <span className="stat-number electric-text">50K+</span>
-            <span className="stat-label">Prize Pool</span>
+            <span className="stat-number electric-text">100+</span>
+            <span className="stat-label">Participants</span>
           </div>
         </div>
       </div>
