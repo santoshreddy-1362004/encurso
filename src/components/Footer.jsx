@@ -50,9 +50,9 @@ export default function Footer() {
             <p>📱 +91 98765 43210</p>
             <p>📍 EEE Department, Block C</p>
             <div className="footer-socials">
-              <a href="#" className="social-icon" aria-label="Instagram">📷</a>
-              <a href="#" className="social-icon" aria-label="LinkedIn">💼</a>
-              <a href="#" className="social-icon" aria-label="Twitter">🐦</a>
+              <a href="https://www.instagram.com/encurso2k26?igsh=MXVkYzl3cHQwbWY2dQ==" className="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer" title="Instagram">📸</a>
+              <a href="https://x.com/Encurso2K26" className="social-icon" aria-label="X" target="_blank" rel="noopener noreferrer" title="X (Twitter)">𝕏</a>
+              <a href="https://chat.whatsapp.com/BXpwNBOvpReEQM6XK2ghYw" className="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer" title="WhatsApp">🟢</a>
             </div>
           </div>
         </div>
