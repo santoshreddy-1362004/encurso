@@ -11,8 +11,8 @@ const events = [
     desc: 'This event provides a platform for participants to present their research, ideas, and innovations in the field of Electrical and Electronics Engineering. It encourages knowledge sharing, critical thinking, and interaction with academicians and industry professionals.',
     tag: 'Technical',
     category: 'Technical',
-    prize: '₹5,000',
-    team: '1-2 members',
+    prize: '₹1,000',
+    entryFee: '₹200',
     team: '1-2 members',
     evaluation: [
       'Content Quality – Depth of research, originality, and relevance to the domain',
@@ -30,8 +30,8 @@ const events = [
     desc: 'The Project Expo offers students an opportunity to exhibit their technical projects based on emerging and advanced technologies. Participants can demonstrate practical applications of their knowledge and showcase innovative solutions to real-world problems.',
     tag: 'Technical',
     category: 'Technical',
-    prize: '₹12,000',
-    team: '2-4 members',
+    prize: '₹3,500 / team',
+    entryFee: '₹1,200 / team',
     team: '2-4 members',
     evaluation: [
       'Innovation & Creativity – Uniqueness of the project idea',
@@ -68,8 +68,8 @@ const events = [
     desc: 'Transform your ideas into impactful visuals by presenting research, innovations, and technical concepts through creative posters.',
     tag: 'Technical',
     category: 'Technical',
-    prize: '₹3,000',
-    team: '1-2 members',
+    prize: '₹3,500 / team',
+    entryFee: '₹1,200 / team',
     team: '1-2 members',
     evaluation: [
       'Content Clarity – Relevance and accuracy of information',
