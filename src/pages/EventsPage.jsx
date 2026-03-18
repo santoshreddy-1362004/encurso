@@ -49,7 +49,8 @@ const events = [
     desc: 'A technical event designed to test participants\' understanding of electrical principles and their ability to analyze and solve circuit-related problems.',
     tag: 'Technical',
     category: 'Technical',
-    prize: '₹4,000',
+    prize: '₹2,000',
+    entryFee: '₹500 / group',
     team: '2-3 members',
     duration: '1 hour',
     evaluation: [
@@ -86,6 +87,7 @@ const events = [
     tag: 'Non-Technical',
     category: 'Non-Technical',
     prize: '₹2,000',
+    entryFee: '₹500 / group',
     team: '2-3 members',
     duration: '45 min',
     evaluation: [
@@ -103,7 +105,8 @@ const events = [
     desc: 'Capture stunning moments and express creativity through photography. Let your photos tell a compelling story.',
     tag: 'Non-Technical',
     category: 'Non-Technical',
-    prize: '₹3,000',
+    prize: '₹500',
+    entryFee: '₹50 / person',
     team: 'Individual',
     duration: 'Full Day',
     evaluation: [
@@ -121,7 +124,8 @@ const events = [
     desc: 'A thrilling event where participants follow clues, solve puzzles, and race against time to find the hidden treasure.',
     tag: 'Non-Technical',
     category: 'Non-Technical',
-    prize: '₹2,500',
+    prize: '₹500',
+    entryFee: '₹50 / person',
     team: '2-4 members',
     duration: '1 hour',
     evaluation: [
@@ -139,7 +143,8 @@ const events = [
     desc: 'Showcase your creativity and storytelling skills through short-form videos. Create engaging and impactful reels.',
     tag: 'Non-Technical',
     category: 'Non-Technical',
-    prize: '₹2,000',
+    prize: '₹1,000',
+    entryFee: '₹100 / person',
     team: 'Individual',
     duration: 'Full Day',
     evaluation: [
@@ -201,6 +206,7 @@ export default function EventsPage() {
                 <div className="ep-detail"><span className="ep-label">Prize</span><span className="ep-value">{event.prize}</span></div>
                 <div className="ep-detail"><span className="ep-label">Team</span><span className="ep-value">{event.team}</span></div>
                 <div className="ep-detail"><span className="ep-label">Duration</span><span className="ep-value">{event.duration}</span></div>
+                {event.entryFee && <div className="ep-detail"><span className="ep-label">Entry Fee</span><span className="ep-value" style={{color: '#39ff14'}}>{event.entryFee}</span></div>}
               </div>
               <div className="ep-btn-group">
                 <a
@@ -219,7 +225,6 @@ export default function EventsPage() {
               {expandedIndex === i && (
                 <div className="ep-expanded-details" style={{marginTop:'1rem',background:'#0a1a2f',padding:'1rem',borderRadius:'8px'}}>
                   <strong>Team:</strong> {event.team}<br/>
-                  <strong>Duration:</strong> {event.duration}<br/>
                   <strong>Description:</strong> {event.desc}
                   {event.evaluation && (
                     <div style={{marginTop:'0.8rem'}}>
@@ -243,7 +248,7 @@ export default function EventsPage() {
             <img src={events[modalIndex].img} alt={events[modalIndex].name} style={{width:'100%',borderRadius:'8px',marginBottom:'1rem'}} />
             <p>{events[modalIndex].desc}</p>
             <strong>Team:</strong> {events[modalIndex].team}<br/>
-            <strong>Duration:</strong> {events[modalIndex].duration}<br/>
+            {events[modalIndex].entryFee && <><strong style={{color: '#39ff14'}}>Entry Fee:</strong> <span style={{color: '#39ff14'}}>{events[modalIndex].entryFee}</span><br/></>}
             {events[modalIndex].evaluation && (
               <div style={{marginTop:'1rem'}}>
                 <strong style={{color:'#00f0ff'}}>📋 Evaluation Criteria:</strong>

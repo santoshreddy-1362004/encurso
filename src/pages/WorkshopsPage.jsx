@@ -34,7 +34,7 @@ const workshops = [
     registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdzClSt-_gyp1qmyqzzZPrTLdqIQV5p4-oWCaNAYa1BzBkDOA/viewform?usp=dialog',
   },
   {
-    title: 'Electric Vehicles (EV) Workshop',
+    title: 'Hands-on Electric Vehicle (EV) Workshop',
     subtitle: 'Powering the future of smart mobility',
     img: '/image copy 2.png',
     instructor: 'EV Industry Professionals',
