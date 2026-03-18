@@ -1,0 +1,13 @@
+.registration-page {
+  animation: fadeIn 1s ease-out;
+}
+
+.main-reg-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.6) !important;
+}
+
+.workshop-reg-btn:hover {
+  background: rgba(0, 240, 255, 0.1) !important;
+  transform: translateY(-3px);
+}

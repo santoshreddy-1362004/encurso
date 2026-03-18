@@ -8,7 +8,7 @@ import { RouteTransitionProvider } from './components/RouteTransitionProvider'
 import HomePage from './pages/HomePage'
 import EventsPage from './pages/EventsPage'
 import WorkshopsPage from './pages/WorkshopsPage'
-import TimelinePage from './pages/TimelinePage'
+import RegistrationPage from './pages/RegistrationPage'
 import HelplinePage from './pages/HelplinePage'
 import './App.css'
 
@@ -62,7 +62,7 @@ function AppContent() {
             <Route path="/" element={<HomePage />} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/workshops" element={<WorkshopsPage />} />
-            <Route path="/timeline" element={<TimelinePage />} />
+            <Route path="/register" element={<RegistrationPage />} />
             <Route path="/helpline" element={<HelplinePage />} />
           </Routes>
         </main>

@@ -6,31 +6,13 @@ export default function About() {
       <h2 className="section-title">
         About <span className="highlight">ENCURSO</span>
       </h2>
-      <div className="about-grid">
-        <div className="about-card spark-border">
-          <div className="card-icon">🔌</div>
-          <h3>Electrifying Innovation</h3>
-          <p>
-            ENCURSO 2K26 is the flagship technical fest of the Department of Electrical & Electronics 
-            Engineering. A celebration of circuits, innovation, and the future of sustainable energy.
-          </p>
-        </div>
-        <div className="about-card spark-border">
-          <div className="card-icon">⚡</div>
-          <h3>Powered By Passion</h3>
-          <p>
-            From electric vehicles to smart grids, from autonomous drones to renewable energy — 
-            we bring the future of EEE to life through competitions, workshops, and exhibitions.
-          </p>
-        </div>
-        <div className="about-card spark-border">
-          <div className="card-icon">🔋</div>
-          <h3>Charged Experiences</h3>
-          <p>
-            Two days of non-stop technical events, coding challenges, robotics battles, 
-            paper presentations, and mind-blowing demonstrations of electrical engineering.
-          </p>
-        </div>
+      <div className="about-content" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', lineHeight: '1.8', fontSize: '1.1rem', color: '#e0e0e0', padding: '0 20px' }}>
+        <p style={{ marginBottom: '1.5rem' }}>
+          ENCURSO 2K26, the National-Level Technical Symposium organized by the Department of Electrical Engineering, brings together students, academicians, and industry professionals on a single platform to showcase innovation and technical expertise. It serves as a space for exchanging ideas, exploring emerging technologies, and fostering creativity within the engineering community.
+        </p>
+        <p>
+          The event emphasizes learning beyond classrooms through workshops, project expos, and expert sessions, providing hands-on experience and industry exposure. ENCURSO 2K26 encourages participants to develop practical skills, engage with like-minded peers, and transform innovative ideas into real-world solutions.
+        </p>
       </div>
       <div className="voltage-divider">
         <svg viewBox="0 0 1200 60" preserveAspectRatio="none">

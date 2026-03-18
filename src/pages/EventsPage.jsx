@@ -6,82 +6,148 @@ import Modal from '../components/Modal'
 const events = [
   {
     name: 'Paper Presentation',
-    img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80',
-    desc: 'Showcase your research and innovative ideas in electrical engineering and allied fields. Compete for recognition and prizes.',
-    tag: 'Paper',
+    icon: '📄',
+    img: '/paper.png',
+    desc: 'This event provides a platform for participants to present their research, ideas, and innovations in the field of Electrical and Electronics Engineering. It encourages knowledge sharing, critical thinking, and interaction with academicians and industry professionals.',
+    tag: 'Technical',
+    category: 'Technical',
     prize: '₹5,000',
     team: '1-2 members',
     duration: '15 min per team',
+    evaluation: [
+      'Content Quality – Depth of research, originality, and relevance to the domain',
+      'Technical Knowledge – Understanding of the subject and clarity in explanation',
+      'Presentation Skills – Communication, confidence, and delivery',
+      'Innovation & Contribution – Novel ideas and practical significance',
+      'Response to Questions – Ability to handle queries effectively',
+    ],
     registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdGVsEXmXT9A0-uDlbwJ9nCeeKlhPZdWqr0i15N6VPq_tb_Bg/viewform?usp=publish-editor',
   },
   {
     name: 'Project Expo',
-    img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80',
-    desc: 'Display your working projects—hardware, software, or integrated systems. Inspire and be inspired by peer innovations.',
-    tag: 'Expo',
+    icon: '🔧',
+    img: '/projectexp.png',
+    desc: 'The Project Expo offers students an opportunity to exhibit their technical projects based on emerging and advanced technologies. Participants can demonstrate practical applications of their knowledge and showcase innovative solutions to real-world problems.',
+    tag: 'Technical',
+    category: 'Technical',
     prize: '₹12,000',
     team: '2-4 members',
     duration: 'Full Day',
-    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfykDpu5v33SXnI4EOYweiHbC5SAkVS7C3K_paJngI1f33mbA/viewform?usp=publish-editor',
+    evaluation: [
+      'Innovation & Creativity – Uniqueness of the project idea',
+      'Technical Implementation – Functionality and working model',
+      'Practical Application – Real-world relevance and problem-solving capability',
+      'Presentation & Demonstration – Clarity in explaining the project',
+      'Team Effort – Coordination and contribution of team members',
+    ],
+    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSc-BMzVt6Dnl8gjQ5TOz4s0G6K_8Ku8kWCLVzl2ICWy8SQ-og/viewform?usp=dialog',
   },
   {
     name: 'Circuit Clash',
-    img: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&q=80',
-    desc: 'Test your circuit design and troubleshooting skills in a fast-paced, competitive environment.',
+    icon: '⚡',
+    img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
+    desc: 'A technical event designed to test participants\' understanding of electrical principles and their ability to analyze and solve circuit-related problems.',
     tag: 'Technical',
+    category: 'Technical',
     prize: '₹4,000',
     team: '2-3 members',
     duration: '1 hour',
+    evaluation: [
+      'Conceptual Knowledge – Understanding of electrical fundamentals',
+      'Problem-Solving Skills – Accuracy and efficiency in solving circuits',
+      'Time Management – Ability to complete tasks within the given time',
+      'Analytical Thinking – Logical approach to circuit analysis',
+    ],
     registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfRmwo145el-AXK_9NW_jc_ENFHS8MQyu87pW8zFVubeMoLAQ/viewform?usp=publish-editor',
   },
   {
     name: 'Poster Presentation',
-    img: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&q=80',
-    desc: 'Communicate your technical concepts visually. Present posters on innovative topics and win accolades.',
-    tag: 'Poster',
+    icon: '🖼️',
+    img: '/poster.png',
+    desc: 'Transform your ideas into impactful visuals by presenting research, innovations, and technical concepts through creative posters.',
+    tag: 'Technical',
+    category: 'Technical',
     prize: '₹3,000',
     team: '1-2 members',
     duration: '2 hours',
+    evaluation: [
+      'Content Clarity – Relevance and accuracy of information',
+      'Creativity – Visual appeal and originality',
+      'Presentation Skills – Explanation and confidence',
+      'Design – Layout, organization, and readability',
+    ],
     registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdb1qdSveEjtaLsujNpbo6dzNx4I2Qyp0YFsKo0tsjymVMT8g/viewform?usp=publish-editor',
   },
   {
     name: 'Watt-a-Quiz',
-    img: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&q=80',
-    desc: 'A power-packed quiz on electrical engineering, technology, and current affairs. Test your knowledge and win!',
-    tag: 'Quiz',
+    icon: '❓',
+    img: '/quiz.png',
+    desc: 'An engaging and fun quiz event designed to test participants\' knowledge across various non-technical domains.',
+    tag: 'Non-Technical',
+    category: 'Non-Technical',
     prize: '₹2,000',
     team: '2-3 members',
     duration: '45 min',
+    evaluation: [
+      'Knowledge Base – Range of general knowledge',
+      'Accuracy – Correctness of answers',
+      'Speed – Quick response time',
+      'Team Coordination – Collaboration (if team-based)',
+    ],
     registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeMbkJjE49OK521ZcEQ3dlzEoOMCPeuuNGW-zk7nnj3gTWNaw/viewform?usp=publish-editor',
   },
   {
     name: 'Photography Contest',
-    img: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&q=80',
-    desc: 'Capture the spirit of ENCURSO! Submit your best shots and compete for the top spot.',
-    tag: 'Creative',
+    icon: '📸',
+    img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80',
+    desc: 'Capture stunning moments and express creativity through photography. Let your photos tell a compelling story.',
+    tag: 'Non-Technical',
+    category: 'Non-Technical',
     prize: '₹3,000',
     team: 'Individual',
     duration: 'Full Day',
+    evaluation: [
+      'Creativity – Uniqueness of the concept',
+      'Composition – Framing, lighting, and focus',
+      'Storytelling – Message conveyed through the image',
+      'Technical Quality – Clarity and overall image quality',
+    ],
     registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSclCodiN-sCYRIYBD0j2fxMcFRaM2U3ezRatOYxesDNOCq8Fg/viewform?usp=publish-editor',
   },
   {
     name: 'Treasure Hunt',
-    img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&q=80',
-    desc: 'Solve clues, race against time, and find the hidden treasure on campus. Teamwork and wit will lead you to victory.',
-    tag: 'Fun',
+    icon: '🗺️',
+    img: '/treasure.png',
+    desc: 'A thrilling event where participants follow clues, solve puzzles, and race against time to find the hidden treasure.',
+    tag: 'Non-Technical',
+    category: 'Non-Technical',
     prize: '₹2,500',
     team: '2-4 members',
     duration: '1 hour',
+    evaluation: [
+      'Problem-Solving – Ability to decode clues',
+      'Teamwork – Coordination among team members',
+      'Speed & Accuracy – Completing tasks efficiently',
+      'Strategy – Planning and decision-making',
+    ],
     registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeBXkS1p4ymEP-pwKavgGTAfMn6bketwXCM7dSdUGeNommWSw/viewform?usp=publish-editor',
   },
   {
     name: 'Reel Contest',
-    img: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&q=80',
-    desc: 'Create and share a short, creative video reel capturing the excitement of the fest. Let your creativity shine!',
-    tag: 'Creative',
+    icon: '🎬',
+    img: '/reel.png',
+    desc: 'Showcase your creativity and storytelling skills through short-form videos. Create engaging and impactful reels.',
+    tag: 'Non-Technical',
+    category: 'Non-Technical',
     prize: '₹2,000',
     team: 'Individual',
     duration: 'Full Day',
+    evaluation: [
+      'Creativity – Originality of the concept',
+      'Content Quality – Relevance and engagement',
+      'Editing Skills – Transitions, effects, and presentation',
+      'Storytelling – Clarity and impact of the message',
+    ],
     registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfyyWIUKDvXXIkW3iQCmrgb-6ZLJFJdgD9kmino6e1lczscHw/viewform?usp=publish-editor',
   },
 ]
@@ -89,6 +155,9 @@ const events = [
 export default function EventsPage() {
   const [modalIndex, setModalIndex] = useState(null)
   const [expandedIndex, setExpandedIndex] = useState(null)
+  const [filter, setFilter] = useState('All')
+
+  const filteredEvents = filter === 'All' ? events : events.filter(e => e.category === filter)
   return (
     <div className="events-page">
       <div className="events-page-header">
@@ -100,13 +169,26 @@ export default function EventsPage() {
       </div>
 
       <div className="events-filter">
-        {['All', 'Paper', 'Poster', 'Expo', 'Creative'].map(tag => (
-          <span className="filter-tag" key={tag}>{tag}</span>
+        {['All', 'Technical', 'Non-Technical'].map(tag => (
+          <button 
+            className={`filter-tag ${filter === tag ? 'active' : ''}`} 
+            key={tag}
+            onClick={() => setFilter(tag)}
+            style={{ 
+              background: filter === tag ? 'var(--neon-blue)' : 'rgba(255,255,255,0.05)',
+              color: filter === tag ? '#000' : '#fff',
+              border: 'none',
+              cursor: 'pointer',
+              fontWeight: filter === tag ? 'bold' : 'normal'
+            }}
+          >
+            {tag}
+          </button>
         ))}
       </div>
 
       <div className="events-page-grid">
-        {events.map((event, i) => (
+        {filteredEvents.map((event, i) => (
           <div className={`ep-card spark-border${expandedIndex === i ? ' ep-card-expanded' : ''}`} key={i} style={{ animationDelay: `${i * 0.08}s` }}>
             <div className="ep-card-img">
               <img src={event.img} alt={event.name} loading="lazy" />
@@ -139,6 +221,14 @@ export default function EventsPage() {
                   <strong>Team:</strong> {event.team}<br/>
                   <strong>Duration:</strong> {event.duration}<br/>
                   <strong>Description:</strong> {event.desc}
+                  {event.evaluation && (
+                    <div style={{marginTop:'0.8rem'}}>
+                      <strong style={{color:'#00f0ff'}}>📋 Evaluation Criteria:</strong>
+                      <ul style={{marginTop:'0.4rem',paddingLeft:'1.2rem',color:'rgba(255,255,255,0.8)'}}>
+                        {event.evaluation.map((c, j) => <li key={j} style={{marginBottom:'0.3rem'}}>{c}</li>)}
+                      </ul>
+                    </div>
+                  )}
                   <p style={{marginTop:'0.5rem'}}><a href={event.registerUrl} target="_blank" rel="noopener noreferrer" style={{color:'#00f0ff'}}>Register for this event</a></p>
                 </div>
               )}
@@ -149,12 +239,20 @@ export default function EventsPage() {
       <Modal open={modalIndex !== null} onClose={() => setModalIndex(null)}>
         {modalIndex !== null && (
           <div>
-            <h2 style={{color:'#00f0ff'}}>{events[modalIndex].name}</h2>
+            <h2 style={{color:'#00f0ff'}}>{events[modalIndex].icon} {events[modalIndex].name}</h2>
             <img src={events[modalIndex].img} alt={events[modalIndex].name} style={{width:'100%',borderRadius:'8px',marginBottom:'1rem'}} />
             <p>{events[modalIndex].desc}</p>
             <strong>Team:</strong> {events[modalIndex].team}<br/>
             <strong>Duration:</strong> {events[modalIndex].duration}<br/>
-            <a href={events[modalIndex].registerUrl} target="_blank" rel="noopener noreferrer" style={{color:'#00f0ff',fontWeight:'bold'}}>Register Now</a>
+            {events[modalIndex].evaluation && (
+              <div style={{marginTop:'1rem'}}>
+                <strong style={{color:'#00f0ff'}}>📋 Evaluation Criteria:</strong>
+                <ul style={{marginTop:'0.4rem',paddingLeft:'1.2rem',color:'rgba(255,255,255,0.85)'}}>
+                  {events[modalIndex].evaluation.map((c, j) => <li key={j} style={{marginBottom:'0.3rem'}}>{c}</li>)}
+                </ul>
+              </div>
+            )}
+            <a href={events[modalIndex].registerUrl} target="_blank" rel="noopener noreferrer" style={{color:'#00f0ff',fontWeight:'bold',marginTop:'1rem',display:'inline-block'}}>Register Now ⚡</a>
           </div>
         )}
       </Modal>

@@ -153,18 +153,22 @@ export default function Hero() {
           <span className="highlight-word">Voltage</span>
           <span className="tagline-spark">⚡</span>
         </p>
-        <p className="hero-description">
-          Experience the electrifying fusion of technology, creativity, and engineering excellence. 
-          The biggest EEE department fest is here — powered by passion, driven by circuits.
-        </p>
-        <div className="hero-buttons">
-          <Link to="/events" className="btn-primary" onClick={event => handleHeroRouteChange(event, '/events')}>
-            <span className="btn-text">Explore Events</span>
-            <span className="btn-spark" />
+
+
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
+          <Link to="/register" className="btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.2rem', background: '#00f0ff', color: '#0a1a2f', textDecoration: 'none', borderRadius: '50px', fontWeight: 'bold', boxShadow: '0 0 20px rgba(0,240,255,0.4)', transition: 'all 0.3s' }} onClick={event => handleHeroRouteChange(event, '/register')}>
+            Register Now ⚡
           </Link>
-          <Link to="/timeline" className="btn-secondary" onClick={event => handleHeroRouteChange(event, '/timeline')}>
-            View Timeline
-          </Link>
+          <div className="hero-buttons">
+            <Link to="/events" className="btn-primary" onClick={event => handleHeroRouteChange(event, '/events')}>
+              <span className="btn-text">Explore Events</span>
+              <span className="btn-spark" />
+            </Link>
+            <Link to="/workshops" className="btn-primary" onClick={event => handleHeroRouteChange(event, '/workshops')}>
+              <span className="btn-text">Explore Workshops</span>
+              <span className="btn-spark" />
+            </Link>
+          </div>
         </div>
         <div className="hero-stats">
           <div className="stat-item">
@@ -173,7 +177,7 @@ export default function Hero() {
           </div>
           <div className="stat-divider" />
           <div className="stat-item">
-            <span className="stat-number electric-text">3</span>
+            <span className="stat-number electric-text">4</span>
             <span className="stat-label">Workshops</span>
           </div>
           <div className="stat-divider" />

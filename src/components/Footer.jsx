@@ -16,11 +16,11 @@ export default function Footer() {
           <div className="footer-links-section">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#hero">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="/workshops">Workshops</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/register">Registration</a></li>
               <li><a href="/events">Events</a></li>
-              <li><a href="#drones">Drones</a></li>
+              <li><a href="/workshops">Workshops</a></li>
+              <li><a href="/helpline">Helpline</a></li>
             </ul>
           </div>
           <div className="footer-links-section">
@@ -28,7 +28,8 @@ export default function Footer() {
             <ul>
               <li><a href="/workshops">IoT Workshop</a></li>
               <li><a href="/workshops">Drone Workshop</a></li>
-              <li><a href="/workshops">MATLAB Simulation</a></li>
+              <li><a href="/workshops">EV Workshop</a></li>
+              <li><a href="/workshops">Embedded Systems</a></li>
             </ul>
           </div>
           <div className="footer-links-section">
@@ -46,10 +47,14 @@ export default function Footer() {
           </div>
           <div className="footer-contact">
             <h4>Contact Us</h4>
-            <p>📧 encurso2k26@eee.edu</p>
-            <p>📱 +91 98765 43210</p>
-            <p>📍 EEE Department, Block C</p>
-            <div className="footer-socials">
+            <p style={{marginBottom: '0.2rem'}}><strong>Student Co-ordinators</strong></p>
+            <p>K.V.V Sri Ram - 6301415143</p>
+            <p>K. Vijay - 9949457004</p>
+            <p style={{marginTop: '0.5rem', marginBottom: '0.2rem'}}><strong>For Further Queries</strong></p>
+            <p>Pardha Praneeth . P - 9121962349</p>
+            <p>G. Gnanendra - 9392454542</p>
+            <p style={{marginTop: '0.5rem'}}>📧 encurso2k26@gmail.com</p>
+            <div className="footer-socials" style={{marginTop: '1rem'}}>
               <a href="https://www.instagram.com/encurso2k26?igsh=MXVkYzl3cHQwbWY2dQ==" className="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer" title="Instagram">📸</a>
               <a href="https://x.com/Encurso2K26" className="social-icon" aria-label="X" target="_blank" rel="noopener noreferrer" title="X (Twitter)">𝕏</a>
               <a href="https://chat.whatsapp.com/BXpwNBOvpReEQM6XK2ghYw" className="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer" title="WhatsApp">🟢</a>

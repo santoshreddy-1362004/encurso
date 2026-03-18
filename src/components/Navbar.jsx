@@ -5,9 +5,9 @@ import './Navbar.css'
 
 const navItems = [
   { label: 'Home', path: '/', icon: '🏠' },
+  { label: 'Register', path: '/register', icon: '📝' },
   { label: 'Events', path: '/events', icon: '🎯' },
   { label: 'Workshops', path: '/workshops', icon: '🔧' },
-  { label: 'Timeline', path: '/timeline', icon: '📅' },
   { label: 'Helpline', path: '/helpline', icon: '📞' },
 ]
 
@@ -60,7 +60,7 @@ export default function Navbar() {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           <NavLink to="/" className="nav-logo" onClick={event => handleRouteChange(event, '/')}>
-            <img src="/symbol2.png" alt="ENCURSO" className="nav-logo-img" />
+            <img src="/symbol1.png" alt="ENCURSO logo" className="nav-logo-img" />
             <div className="nav-logo-text">
               <span className="logo-text">ENCURSO</span>
               <span className="logo-year">2K26</span>
@@ -83,7 +83,7 @@ export default function Navbar() {
           </ul>
 
           <NavLink to="/" className="nav-logo-right" onClick={event => handleRouteChange(event, '/')}>
-            <img src="/symbol1.png" alt="JNTUK" className="nav-logo-img" />
+            <img src="/symbol2.png" alt="JNTUK logo" className="nav-logo-img" />
           </NavLink>
         </div>
       </nav>
