@@ -60,7 +60,7 @@ export default function Navbar() {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           <NavLink to="/" className="nav-logo" onClick={event => handleRouteChange(event, '/')}>
-            <img src="/symbol1.png" alt="ENCURSO logo" className="nav-logo-img" />
+            <img src="/image%20copy%204.png" alt="ENCURSO logo" className="nav-logo-img" />
             <div className="nav-logo-text">
               <span className="logo-text">ENCURSO</span>
               <span className="logo-year">2K26</span>
@@ -83,7 +83,7 @@ export default function Navbar() {
           </ul>
 
           <NavLink to="/" className="nav-logo-right" onClick={event => handleRouteChange(event, '/')}>
-            <img src="/symbol2.png" alt="JNTUK logo" className="nav-logo-img" />
+            <img src="/image.png" alt="JNTUK logo" className="nav-logo-img" />
           </NavLink>
         </div>
       </nav>

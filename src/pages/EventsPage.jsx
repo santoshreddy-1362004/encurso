@@ -13,7 +13,7 @@ const events = [
     category: 'Technical',
     prize: '₹5,000',
     team: '1-2 members',
-    duration: '15 min per team',
+    team: '1-2 members',
     evaluation: [
       'Content Quality – Depth of research, originality, and relevance to the domain',
       'Technical Knowledge – Understanding of the subject and clarity in explanation',
@@ -32,7 +32,7 @@ const events = [
     category: 'Technical',
     prize: '₹12,000',
     team: '2-4 members',
-    duration: 'Full Day',
+    team: '2-4 members',
     evaluation: [
       'Innovation & Creativity – Uniqueness of the project idea',
       'Technical Implementation – Functionality and working model',
@@ -52,7 +52,7 @@ const events = [
     prize: '₹2,000',
     entryFee: '₹500 / group',
     team: '2-3 members',
-    duration: '1 hour',
+    team: '2-3 members',
     evaluation: [
       'Conceptual Knowledge – Understanding of electrical fundamentals',
       'Problem-Solving Skills – Accuracy and efficiency in solving circuits',
@@ -70,7 +70,7 @@ const events = [
     category: 'Technical',
     prize: '₹3,000',
     team: '1-2 members',
-    duration: '2 hours',
+    team: '1-2 members',
     evaluation: [
       'Content Clarity – Relevance and accuracy of information',
       'Creativity – Visual appeal and originality',
@@ -89,7 +89,7 @@ const events = [
     prize: '₹2,000',
     entryFee: '₹500 / group',
     team: '2-3 members',
-    duration: '45 min',
+    team: '2-3 members',
     evaluation: [
       'Knowledge Base – Range of general knowledge',
       'Accuracy – Correctness of answers',
@@ -108,7 +108,7 @@ const events = [
     prize: '₹500',
     entryFee: '₹50 / person',
     team: 'Individual',
-    duration: 'Full Day',
+    team: 'Individual',
     evaluation: [
       'Creativity – Uniqueness of the concept',
       'Composition – Framing, lighting, and focus',
@@ -127,7 +127,7 @@ const events = [
     prize: '₹500',
     entryFee: '₹50 / person',
     team: '2-4 members',
-    duration: '1 hour',
+    team: '2-4 members',
     evaluation: [
       'Problem-Solving – Ability to decode clues',
       'Teamwork – Coordination among team members',
@@ -146,7 +146,7 @@ const events = [
     prize: '₹1,000',
     entryFee: '₹100 / person',
     team: 'Individual',
-    duration: 'Full Day',
+    team: 'Individual',
     evaluation: [
       'Creativity – Originality of the concept',
       'Content Quality – Relevance and engagement',
@@ -205,7 +205,6 @@ export default function EventsPage() {
               <div className="ep-details">
                 <div className="ep-detail"><span className="ep-label">Prize</span><span className="ep-value">{event.prize}</span></div>
                 <div className="ep-detail"><span className="ep-label">Team</span><span className="ep-value">{event.team}</span></div>
-                <div className="ep-detail"><span className="ep-label">Duration</span><span className="ep-value">{event.duration}</span></div>
                 {event.entryFee && <div className="ep-detail"><span className="ep-label">Entry Fee</span><span className="ep-value" style={{color: '#39ff14'}}>{event.entryFee}</span></div>}
               </div>
               <div className="ep-btn-group">
