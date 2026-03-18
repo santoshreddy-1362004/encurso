@@ -83,7 +83,7 @@ export default function Navbar() {
           </ul>
 
           <NavLink to="/" className="nav-logo-right" onClick={event => handleRouteChange(event, '/')}>
-            <img src="/image%20copy%204.png" alt="ENCURSO logo" className="nav-logo-img" />
+            <img src="/logo.png" alt="ENCURSO logo" className="nav-logo-img" />
           </NavLink>
         </div>
       </nav>
