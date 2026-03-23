@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { throttle } from 'throttle-debounce'
 import './ElectricCursor.css'
 
 export default function ElectricCursor() {
@@ -14,10 +15,12 @@ export default function ElectricCursor() {
     const sparks = []
     const trails = []
 
-    const resize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
+    const resize = throttle(200, () => {
+      if (canvasRef.current) {
+        canvasRef.current.width = window.innerWidth
+        canvasRef.current.height = window.innerHeight
+      }
+    })
     resize()
     window.addEventListener('resize', resize)
 
@@ -53,7 +56,7 @@ export default function ElectricCursor() {
 
     let moveCount = 0
 
-    const onMove = (e) => {
+    const onMove = throttle(16, (e) => {
       prevMouse.x = mouse.x
       prevMouse.y = mouse.y
       mouse.x = e.clientX
@@ -68,7 +71,7 @@ export default function ElectricCursor() {
       if (isDown && moveCount % 5 === 0) {
         spawnArc(mouse.x, mouse.y)
       }
-    }
+    })
 
     const onDown = (e) => {
       isDown = true
@@ -81,16 +84,17 @@ export default function ElectricCursor() {
 
     const onUp = () => { isDown = false }
 
-    const onTouch = (e) => {
+    const onTouch = throttle(16, (e) => {
       const t = e.touches[0]
       if (t) {
         mouse.x = t.clientX
         mouse.y = t.clientY
-        spawnSparks(mouse.x, mouse.y, 4, 3)
-        if (moveCount % 6 === 0) spawnArc(mouse.x, mouse.y)
+        // Reduced particles for mobile touch
+        spawnSparks(mouse.x, mouse.y, 2, 2)
+        if (moveCount % 10 === 0) spawnArc(mouse.x, mouse.y)
         moveCount++
       }
-    }
+    })
 
     window.addEventListener('mousemove', onMove)
     window.addEventListener('mousedown', onDown)
@@ -101,8 +105,8 @@ export default function ElectricCursor() {
       if (t) {
         mouse.x = t.clientX
         mouse.y = t.clientY
-        spawnSparks(mouse.x, mouse.y, 10, 4)
-        for (let i = 0; i < 2; i++) spawnArc(mouse.x, mouse.y)
+        spawnSparks(mouse.x, mouse.y, 6, 3)
+        spawnArc(mouse.x, mouse.y)
       }
     }, { passive: true })
 

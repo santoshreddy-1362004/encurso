@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { throttle } from 'throttle-debounce'
 import './ElectricParticles.css'
 
 export default function ElectricParticles() {
@@ -9,10 +10,12 @@ export default function ElectricParticles() {
     const ctx = canvas.getContext('2d')
     let animationId
 
-    const resize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = document.documentElement.scrollHeight
-    }
+    const resize = throttle(200, () => {
+      if (canvasRef.current) {
+        canvasRef.current.width = window.innerWidth
+        canvasRef.current.height = document.documentElement.scrollHeight
+      }
+    })
     resize()
 
     const resizeObserver = new ResizeObserver(resize)

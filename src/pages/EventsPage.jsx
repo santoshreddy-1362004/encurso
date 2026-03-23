@@ -1,6 +1,7 @@
 
 import './EventsPage.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import Modal from '../components/Modal'
 
 const events = [
@@ -12,7 +13,7 @@ const events = [
     tag: 'Technical',
     category: 'Technical',
     prize: '₹1,000',
-    entryFee: '₹200',
+    entryFee: '₹199',
     team: '1-2 members',
     evaluation: [
       'Content Quality – Depth of research, originality, and relevance to the domain',
@@ -30,9 +31,9 @@ const events = [
     desc: 'The Project Expo offers students an opportunity to exhibit their technical projects based on emerging and advanced technologies. Participants can demonstrate practical applications of their knowledge and showcase innovative solutions to real-world problems.',
     tag: 'Technical',
     category: 'Technical',
-    prize: '₹3,500 / team',
-    entryFee: '₹1,200 / team',
-    team: '2-4 members',
+    prize: '₹3,000 / team',
+    entryFee: '₹999 / team',
+    team: '3-4 members',
     evaluation: [
       'Innovation & Creativity – Uniqueness of the project idea',
       'Technical Implementation – Functionality and working model',
@@ -49,9 +50,8 @@ const events = [
     desc: 'A technical event designed to test participants\' understanding of electrical principles and their ability to analyze and solve circuit-related problems.',
     tag: 'Technical',
     category: 'Technical',
-    prize: '₹2,000',
-    entryFee: '₹500 / group',
-    team: '2-3 members',
+    prize: '₹1,500',
+    entryFee: '₹599 / team',
     team: '2-3 members',
     evaluation: [
       'Conceptual Knowledge – Understanding of electrical fundamentals',
@@ -68,8 +68,8 @@ const events = [
     desc: 'Transform your ideas into impactful visuals by presenting research, innovations, and technical concepts through creative posters.',
     tag: 'Technical',
     category: 'Technical',
-    prize: '₹3,500 / team',
-    entryFee: '₹1,200 / team',
+    prize: '₹1,000 / team',
+    entryFee: '₹199 / team',
     team: '1-2 members',
     evaluation: [
       'Content Clarity – Relevance and accuracy of information',
@@ -87,8 +87,7 @@ const events = [
     tag: 'Non-Technical',
     category: 'Non-Technical',
     prize: '₹2,000',
-    entryFee: '₹500 / group',
-    team: '2-3 members',
+    entryFee: '₹499 / team',
     team: '2-3 members',
     evaluation: [
       'Knowledge Base – Range of general knowledge',
@@ -106,8 +105,7 @@ const events = [
     tag: 'Non-Technical',
     category: 'Non-Technical',
     prize: '₹500',
-    entryFee: '₹50 / person',
-    team: 'Individual',
+    entryFee: '₹49',
     team: 'Individual',
     evaluation: [
       'Creativity – Uniqueness of the concept',
@@ -127,7 +125,6 @@ const events = [
     prize: '₹500',
     entryFee: '₹50 / person',
     team: '2-4 members',
-    team: '2-4 members',
     evaluation: [
       'Problem-Solving – Ability to decode clues',
       'Teamwork – Coordination among team members',
@@ -143,9 +140,8 @@ const events = [
     desc: 'Showcase your creativity and storytelling skills through short-form videos. Create engaging and impactful reels.',
     tag: 'Non-Technical',
     category: 'Non-Technical',
-    prize: '₹1,000',
-    entryFee: '₹100 / person',
-    team: 'Individual',
+    prize: '₹700',
+    entryFee: '₹99',
     team: 'Individual',
     evaluation: [
       'Creativity – Originality of the concept',
@@ -158,9 +154,17 @@ const events = [
 ]
 
 export default function EventsPage() {
-  const [modalIndex, setModalIndex] = useState(null)
+  const [searchParams] = useSearchParams()
+  const [modalEvent, setModalEvent] = useState(null)
   const [expandedIndex, setExpandedIndex] = useState(null)
   const [filter, setFilter] = useState('All')
+
+  useEffect(() => {
+    const cat = searchParams.get('category')
+    if (cat === 'Technical' || cat === 'Non-Technical') {
+      setFilter(cat)
+    }
+  }, [searchParams])
 
   const filteredEvents = filter === 'All' ? events : events.filter(e => e.category === filter)
   return (
@@ -216,7 +220,7 @@ export default function EventsPage() {
                 >
                   Register Now ⚡
                 </a>
-                <button className="ep-explore-btn" onClick={() => setModalIndex(i)}>Explore →</button>
+                <button className="ep-explore-btn" onClick={() => setModalEvent(event)}>Explore →</button>
                 <button className="ep-explore-btn" style={{marginLeft:'0.5rem'}} onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}>
                   {expandedIndex === i ? 'Collapse' : 'Expand'}
                 </button>
@@ -240,23 +244,23 @@ export default function EventsPage() {
           </div>
         ))}
       </div>
-      <Modal open={modalIndex !== null} onClose={() => setModalIndex(null)}>
-        {modalIndex !== null && (
+      <Modal open={modalEvent !== null} onClose={() => setModalEvent(null)}>
+        {modalEvent !== null && (
           <div>
-            <h2 style={{color:'#00f0ff'}}>{events[modalIndex].icon} {events[modalIndex].name}</h2>
-            <img src={events[modalIndex].img} alt={events[modalIndex].name} style={{width:'100%',borderRadius:'8px',marginBottom:'1rem'}} />
-            <p>{events[modalIndex].desc}</p>
-            <strong>Team:</strong> {events[modalIndex].team}<br/>
-            {events[modalIndex].entryFee && <><strong style={{color: '#39ff14'}}>Entry Fee:</strong> <span style={{color: '#39ff14'}}>{events[modalIndex].entryFee}</span><br/></>}
-            {events[modalIndex].evaluation && (
+            <h2 style={{color:'#00f0ff'}}>{modalEvent.icon} {modalEvent.name}</h2>
+            <img src={modalEvent.img} alt={modalEvent.name} style={{width:'100%',borderRadius:'8px',marginBottom:'1rem'}} />
+            <p>{modalEvent.desc}</p>
+            <strong>Team:</strong> {modalEvent.team}<br/>
+            {modalEvent.entryFee && <><strong style={{color: '#39ff14'}}>Entry Fee:</strong> <span style={{color: '#39ff14'}}>{modalEvent.entryFee}</span><br/></>}
+            {modalEvent.evaluation && (
               <div style={{marginTop:'1rem'}}>
                 <strong style={{color:'#00f0ff'}}>📋 Evaluation Criteria:</strong>
                 <ul style={{marginTop:'0.4rem',paddingLeft:'1.2rem',color:'rgba(255,255,255,0.85)'}}>
-                  {events[modalIndex].evaluation.map((c, j) => <li key={j} style={{marginBottom:'0.3rem'}}>{c}</li>)}
+                  {modalEvent.evaluation.map((c, j) => <li key={j} style={{marginBottom:'0.3rem'}}>{c}</li>)}
                 </ul>
               </div>
             )}
-            <a href={events[modalIndex].registerUrl} target="_blank" rel="noopener noreferrer" style={{color:'#00f0ff',fontWeight:'bold',marginTop:'1rem',display:'inline-block'}}>Register Now ⚡</a>
+            <a href={modalEvent.registerUrl} target="_blank" rel="noopener noreferrer" style={{color:'#00f0ff',fontWeight:'bold',marginTop:'1rem',display:'inline-block'}}>Register Now ⚡</a>
           </div>
         )}
       </Modal>
