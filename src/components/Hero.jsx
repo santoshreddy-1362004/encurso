@@ -156,6 +156,9 @@ export default function Hero() {
 
 
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
+          <div className="registration-tag-bounce" style={{ background: 'rgba(255, 51, 51, 0.15)', border: '1px solid #ff3333', color: '#ffaaaa', padding: '0.8rem 1.5rem', borderRadius: '50px', fontWeight: 'bold', fontSize: '0.95rem', boxShadow: '0 0 15px rgba(255,51,51,0.4)', textTransform: 'uppercase', letterSpacing: '1px', textAlign: 'center' }}>
+            🚨 Registrations are open Register fast before 28th March 🚨
+          </div>
           <Link to="/register" className="btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.2rem', background: '#00f0ff', color: '#0a1a2f', textDecoration: 'none', borderRadius: '50px', fontWeight: 'bold', boxShadow: '0 0 20px rgba(0,240,255,0.4)', transition: 'all 0.3s' }} onClick={event => handleHeroRouteChange(event, '/register')}>
             Register Now ⚡
           </Link>

@@ -438,3 +438,16 @@
     letter-spacing: 1.5px;
   }
 }
+
+@keyframes bounce-pop {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+.registration-tag-bounce {
+  animation: bounce-pop 2s ease-in-out infinite;
+}
