@@ -10,6 +10,7 @@ import EventsPage from './pages/EventsPage'
 import WorkshopsPage from './pages/WorkshopsPage'
 import RegistrationPage from './pages/RegistrationPage'
 import HelplinePage from './pages/HelplinePage'
+import SponsorsPage from './pages/SponsorsPage'
 import './App.css'
 
 function AppContent() {
@@ -63,6 +64,7 @@ function AppContent() {
             <Route path="/events" element={<EventsPage />} />
             <Route path="/workshops" element={<WorkshopsPage />} />
             <Route path="/register" element={<RegistrationPage />} />
+            <Route path="/sponsors" element={<SponsorsPage />} />
             <Route path="/helpline" element={<HelplinePage />} />
           </Routes>
         </main>

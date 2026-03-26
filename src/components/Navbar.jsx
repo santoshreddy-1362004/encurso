@@ -8,6 +8,7 @@ const navItems = [
   { label: 'Register', path: '/register', icon: '📝' },
   { label: 'Events', path: '/events', icon: '🎯' },
   { label: 'Workshops', path: '/workshops', icon: '🔧' },
+  { label: 'Sponsors', path: '/sponsors', icon: '🤝' },
   { label: 'Helpline', path: '/helpline', icon: '📞' },
 ]
 

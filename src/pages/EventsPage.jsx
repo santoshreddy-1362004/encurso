@@ -6,7 +6,7 @@ import Modal from '../components/Modal'
 
 const events = [
   {
-    name: 'Paper Presentation',
+    name: 'Paper Presentation (in IEEE format)',
     icon: '📄',
     img: '/paper.png',
     desc: 'This event provides a platform for participants to present their research, ideas, and innovations in the field of Electrical and Electronics Engineering. It encourages knowledge sharing, critical thinking, and interaction with academicians and industry professionals.',
