@@ -56,7 +56,7 @@ const workshops = [
     venue: 'EEE Dept, UCEK, JNTUK Kakinada',
     desc: 'Gain hands-on experience with STM32 microcontrollers and dive into the fundamentals of embedded system design. This workshop focuses on ARM Cortex-M architecture and bare-metal (register-level) programming, where participants will learn to configure GPIO, interrupts, and timers while developing basic hardware control applications through practical experiments.',
     topics: ['STM32 Architecture', 'GPIO & Peripherals', 'Firmware Development', 'RTOS Basics'],
-    pricing: '1 Member: ₹1500 | 3 Members: ₹4000 | 5 Members: ₹6500',
+    pricing: '1 Member: ₹1000 | 3 Members: ₹2500 | 5 Members: ₹4000',
     perks: 'Hands-on practical experience with embedded systems',
     note: 'Participants must bring their laptops.',
     coordinator: 'M. Yashwanth Surya (9502061344), Santosh Reddy',
