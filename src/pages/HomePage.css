@@ -71,44 +71,47 @@
   }
 }
 
-/* Mobile responsiveness */
+/* Mobile responsiveness - Tiny Logo style popup */
 @media (max-width: 768px) {
   .promo-popup {
     bottom: 15px;
     right: 15px;
-    padding: 12px;
-    max-width: 240px;
-    border-radius: 8px;
+    padding: 8px 12px;
+    max-width: fit-content;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
     box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
   }
 
+  .promo-title, .promo-desc {
+    display: none; /* Hide all extra text on mobile */
+  }
+
   .promo-header {
-    margin-bottom: 6px;
-    gap: 6px;
+    margin: 0;
+    gap: 0;
   }
 
   .promo-icon {
-    font-size: 18px;
-  }
-
-  .promo-title {
-    font-size: 0.9rem;
-  }
-
-  .promo-desc {
-    font-size: 0.75rem;
-    margin-bottom: 10px;
-    line-height: 1.3;
-  }
-
-  .promo-close-btn {
-    top: 2px;
-    right: 6px;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .promo-link {
-    padding: 6px 12px;
+    padding: 4px 10px;
     font-size: 0.8rem;
+    white-space: nowrap;
+    border: none;
+    box-shadow: none;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .promo-close-btn {
+    position: static; /* Move out of absolute positioning */
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
   }
 }
