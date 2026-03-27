@@ -180,7 +180,7 @@ export default function Hero() {
           </div>
           <div className="stat-divider" />
           <div className="stat-item">
-            <span className="stat-number electric-text">4</span>
+            <span className="stat-number electric-text">3</span>
             <span className="stat-label">Workshops</span>
           </div>
           <div className="stat-divider" />

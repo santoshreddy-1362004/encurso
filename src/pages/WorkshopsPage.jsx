@@ -5,21 +5,6 @@ import Modal from '../components/Modal'
 
 const workshops = [
   {
-    title: 'Internet of Things workshop',
-    subtitle: 'Design, build, and control smart systems',
-    img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
-    instructor: 'SSIT, Mangalagiri.',
-    duration: '2 Days (Mar 28-29)',
-    venue: 'EEE Dept, UCEK, JNTUK Kakinada',
-    desc: 'Step into the world of smart technology by building your own IoT-based systems using ESP32. This hands-on workshop lets you work directly with sensors and actuators, understand real-time device communication, and create practical automation solutions through guided experiments and live demonstrations. It’s an ideal opportunity to experience how everyday devices are transformed into intelligent systems.',
-    topics: ['IoT Devices', 'Sensors', 'Cloud Integration', 'Live Projects'],
-    pricing: '1 Member: ₹1500 | 3 Members: ₹4000 | 5 Members: ₹6000',
-    perks: 'IoT take-away kits will be provided',
-    note: 'Participants must bring their laptops.',
-    coordinator: 'A. Lokesh (8008982765)',
-    registerUrl: 'https://forms.gle/MuqiWDkd28EYyJHo9',
-  },
-  {
     title: 'Hands on workshop on "Drone Technology"',
     subtitle: 'Design, control, and experience UAV systems',
     img: '/image copy.png',
