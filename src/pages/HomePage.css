@@ -74,7 +74,7 @@
 /* Mobile responsiveness - Tiny Logo style popup */
 @media (max-width: 768px) {
   .promo-popup {
-    bottom: 15px;
+    bottom: 85px; /* Moved up to clear footer/helpline */
     right: 15px;
     padding: 8px 12px;
     max-width: fit-content;
